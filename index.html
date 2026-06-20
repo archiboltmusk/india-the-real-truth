@@ -104,6 +104,30 @@ body{
 .arc h3{font-family:'Spectral',serif;font-weight:600;font-size:21px;margin-bottom:6px}
 .arc .focus{font-size:14.5px;color:rgba(22,19,13,.74);line-height:1.45}
 
+/* ---- global lens architecture ---- */
+.lens-flow{display:flex;flex-wrap:wrap;align-items:stretch;margin:28px 0 38px;
+  border:1px solid var(--ink)}
+.lens-flow .node{flex:1;min-width:150px;padding:18px 14px;text-align:center;
+  background:var(--paper-deep)}
+.lens-flow .node .t{font-family:'Archivo Narrow',sans-serif;letter-spacing:.08em;
+  text-transform:uppercase;font-size:11.5px;font-weight:700;color:var(--rust)}
+.lens-flow .node .s{font-family:'Spectral',serif;font-style:italic;font-size:12.5px;
+  color:rgba(22,19,13,.65);margin-top:6px}
+.lens-flow .arrow{display:flex;align-items:center;justify-content:center;
+  width:34px;color:var(--gold);font-size:18px;background:var(--ink)}
+.lens-grid{display:grid;grid-template-columns:repeat(2,1fr)}
+.lens{border-bottom:1px solid var(--line-soft);padding:26px 0}
+.lens:nth-child(odd){border-right:1px solid var(--line-soft);padding-right:34px}
+.lens:nth-child(even){padding-left:34px}
+.lens .lh{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;gap:10px}
+.lens .lh .name{font-family:'Archivo',sans-serif;font-weight:800;font-size:18.5px}
+.lens .lh .tag{font-family:'Archivo Narrow',sans-serif;letter-spacing:.1em;
+  text-transform:uppercase;font-size:10.5px;color:var(--rust);white-space:nowrap}
+.lens .quote{font-style:italic;font-size:14.5px;color:rgba(22,19,13,.72);
+  border-left:2px solid var(--gold);padding-left:14px;margin-bottom:12px}
+.lens .point{font-size:14.5px;line-height:1.5}
+.lens .point b{color:var(--rust)}
+
 /* ---- volume one feature ---- */
 .feature{margin-top:60px;border:3px double var(--ink);padding:0}
 .feature .ftop{background:var(--ink);color:var(--paper);padding:14px 30px;
@@ -120,6 +144,21 @@ body{
 .feature .fbody .cols p:first-child::first-letter{
   font-family:'Archivo',sans-serif;font-weight:800;float:left;font-size:62px;
   line-height:.7;padding:6px 9px 0 0;color:var(--ink)}
+.feature .fbody .cols h4{font-family:'Spectral',serif;font-weight:700;font-style:normal;
+  font-size:17px;margin:18px 0 6px;color:var(--rust);break-after:avoid;break-inside:avoid}
+.feature .fbody .mini-flow{display:flex;flex-direction:column;align-items:center;
+  gap:6px;margin:8px 0 24px;break-inside:avoid}
+.feature .fbody .mini-flow .box{border:1px solid var(--ink);padding:9px 20px;
+  background:var(--paper-deep);font-family:'Archivo Narrow',sans-serif;
+  letter-spacing:.08em;text-transform:uppercase;font-size:11.5px;text-align:center}
+.feature .fbody .mini-flow .box .lbl{display:block;font-family:'Spectral',serif;
+  font-style:italic;text-transform:none;letter-spacing:0;font-size:12px;color:var(--rust);margin-top:3px}
+.feature .fbody .mini-flow .arrow{color:var(--gold);font-size:16px}
+.feature .reader-protocol{column-span:all;margin-top:8px;padding-top:24px;border-top:1px solid var(--line-soft)}
+.feature .reader-protocol .rp-head{font-family:'Archivo Narrow',sans-serif;letter-spacing:.16em;
+  text-transform:uppercase;font-size:11px;color:var(--rust);margin-bottom:14px}
+.feature .reader-protocol .rp-item{margin-bottom:12px;font-size:14.5px;color:rgba(22,19,13,.78)}
+.feature .reader-protocol .rp-item b{font-family:'Archivo',sans-serif;font-size:14px;color:var(--ink)}
 
 /* ---- protocol ---- */
 .protocol{margin-top:60px;background:var(--ink);color:var(--paper);
@@ -131,7 +170,7 @@ body{
   text-transform:uppercase;font-size:12px;color:#d98f6e}
 .protocol .ph h2{font-family:'Archivo',sans-serif;font-weight:700;text-transform:uppercase;
   font-size:clamp(22px,3.4vw,34px)}
-.protocol .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.protocol .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px}
 .protocol .pitem .pn{font-family:'Archivo',sans-serif;font-weight:800;font-size:13px;color:#caa24a}
 .protocol .pitem h4{font-family:'Spectral',serif;font-weight:600;font-size:19px;margin:4px 0 6px}
 .protocol .pitem p{font-size:15px;color:rgba(232,226,210,.82);line-height:1.5}
@@ -152,6 +191,11 @@ body{
   .arc-grid{grid-template-columns:1fr}
   .arc:nth-child(odd){border-right:0;padding-right:0}
   .arc:nth-child(even){padding-left:0}
+  .lens-grid{grid-template-columns:1fr}
+  .lens:nth-child(odd){border-right:0;padding-right:0}
+  .lens:nth-child(even){padding-left:0}
+  .lens-flow{flex-direction:column}
+  .lens-flow .arrow{width:auto;padding:6px 0;transform:rotate(90deg)}
   .feature .fbody .cols{column-count:1}
   .feature .fbody{padding:30px 24px}
   .protocol .pgrid{grid-template-columns:1fr;gap:24px}
@@ -166,7 +210,7 @@ body{
   <div class="wrap">
     <div class="kicker">
       <span>The Primary Source Edition</span>
-      <span class="r">No. I — The Constitutional Trap</span>
+      <span class="r">No. I — The Great Delusion</span>
       <span>Unedited &amp; Unflinching</span>
     </div>
     <div class="title-block">
@@ -188,6 +232,7 @@ body{
   <div class="lead">
     <p>This is not an encyclopedia. It is an architectural blueprint for a civilisational resurrection — approached with the precision of a surgeon and the soul of a philosopher.</p>
     <p>The collection refuses the comfortable story taught in classrooms: that Partition was a clean, inevitable religious war between a unified Hindu crowd and a unified Muslim crowd, led by a cartoon villain and a flawless saint. It opens, instead, the doors to the air-conditioned boardrooms where an elite traded human lives for a monopoly on the state.</p>
+    <p>And it refuses to stay inside a single region's lens. The same boardroom deadlock is read again through the world's sharpest instruments for human absurdity, ego and crowd behaviour — Kafka's bureaucratic nightmares, Freud's theatre of the unconscious, Holmes's forensic deduction, and the pop-cultural machinery of mass intoxication — so that the dates stop being dates and start being a psychological thriller everyone can feel.</p>
   </div>
   <aside class="side">
     <h3>The Metric for Pure Truth</h3>
@@ -205,6 +250,11 @@ body{
       <span class="n">LAW 03</span>
       <h4>The Actionable Pivot</h4>
       <p>Every volume closes with <em>The Protocol</em> — translating its historical truth into an immediate plan for the reader's own mind and community.</p>
+    </div>
+    <div class="law">
+      <span class="n">LAW 04</span>
+      <h4>The Multidisciplinary Mirror</h4>
+      <p>Every archival fact is re-read through a global psychological, literary or cultural lens — never to decorate the history, but to make its human mechanics impossible to look away from.</p>
     </div>
   </aside>
   </div>
@@ -231,16 +281,79 @@ body{
 </section>
 
 <section class="wrap">
+  <div class="section-head">
+    <span class="num">§</span>
+    <h2>The Global Lens Architecture</h2>
+    <span class="vols">Four instruments · One analytical pipeline</span>
+  </div>
+
+  <div class="lens-flow">
+    <div class="node"><span class="t">Kafkaesque Bureaucracy</span><span class="s">The Radcliffe Lines</span></div>
+    <div class="arrow">&rarr;</div>
+    <div class="node"><span class="t">Freudian Ego-Wars</span><span class="s">The New Delhi Elites</span></div>
+    <div class="arrow">&rarr;</div>
+    <div class="node"><span class="t">The Holmesian Deduction</span><span class="s">The British Archives</span></div>
+    <div class="arrow">&rarr;</div>
+    <div class="node"><span class="t">The Pop Conscience</span><span class="s">The Mass Intoxication</span></div>
+  </div>
+
+  <div class="lens-grid">
+    <article class="lens">
+      <div class="lh"><span class="name">Franz Kafka</span><span class="tag">The Absurd Bureaucracy</span></div>
+      <p class="quote">Characters trapped in incomprehensible, surreal bureaucratic nightmares, where invisible authorities make arbitrary laws that destroy human lives.</p>
+      <p class="point"><b>Truth exposed:</b> Cyril Radcliffe, a lawyer who had never set foot in India, was given five weeks to draw a line through kitchens, bedrooms and villages. Millions slept in one country and woke as refugees in another, with no idea why. The cold, mechanical <em>State</em> triumphed over the living, breathing <em>Samaj</em>.</p>
+    </article>
+    <article class="lens">
+      <div class="lh"><span class="name">Sigmund Freud</span><span class="tag">The Ego at War</span></div>
+      <p class="quote">Human action is rarely rational logic — it is the Id, the Ego, and unresolved neuroses, dressed up as noble ideology.</p>
+      <p class="point"><b>Truth exposed:</b> Nehru's centralised state and Jinnah's demand for Pakistan were less doctrine than defense mechanism — two wounded egos, after Jinnah's 1937 humiliation, refusing to share a single steering wheel. Four hundred million people inherited the bill for two men's psychology.</p>
+    </article>
+    <article class="lens">
+      <div class="lh"><span class="name">Sherlock Holmes</span><span class="tag">The Missing Clue</span></div>
+      <p class="quote">"When you have eliminated the impossible, whatever remains, however improbable, must be the truth." Look for the clue that is missing, not the one that is loudest.</p>
+      <p class="point"><b>Truth exposed:</b> Independence was rushed forward a full year, to August 1947, and the final border maps were sealed until after the celebrations. The deduction: a bankrupt empire moved the deadline so the bloodbath would land on someone else's watch.</p>
+    </article>
+    <article class="lens">
+      <div class="lh"><span class="name">Michael Jackson &amp; Coldplay</span><span class="tag">The Pop Conscience</span></div>
+      <p class="quote">A single rhythm can unite — or hypnotise — millions; and the melancholy of a lost paradise, of castles built on sand whose pillars forgot the simple laws of love.</p>
+      <p class="point"><b>Truth exposed:</b> Slogans like <em>"La Ilaha Illallah"</em> and <em>"Akhand Bharat"</em> worked as stadium-anthem hooks, bypassing thought to move crowds in lockstep — until the everyday paradise of coexistence collapsed, and ordinary people were left, as the lyric goes, sweeping streets they used to own.</p>
+    </article>
+  </div>
+</section>
+
+<section class="wrap">
   <div class="feature">
-    <div class="ftop"><span>Volume One · Opening the First Door</span><span class="r">The Constitutional Trap</span></div>
+    <div class="ftop"><span>Volume One · Chapter One</span><span class="r">The Great Delusion</span></div>
     <div class="fbody">
       <span class="vlabel">Arc I — The Boardroom Deadlock</span>
-      <h2>The Ambassador's Mutation</h2>
+      <h2>The Boardroom and the Madhouse</h2>
       <div class="cols">
-        <p>This volume targets the single biggest lie taught in schools — that an entire subcontinent split itself along a clean religious seam. The reality begins with one man's transformation: Jinnah's shift from a secular constitutionalist into an identity-politics strategist.</p>
-        <p>It tracks the 1937 elections and the Congress's fateful refusal to share provincial power. It exhumes the 1946 Cabinet Mission Blueprint — the forgotten plan for a loose, united federation — and the deadlock that buried it.</p>
-        <p>It examines the mechanics of the bluff: how "Pakistan" was first designed as an abstract bargaining chip for a central veto, long before it became a border. And it reconstructs, minute by minute from the archive, how elite stalemates in cool rooms detonated into the Great Calcutta Killings on the streets.</p>
-        <p>No saint. No villain. Only the documents, the dates, and the unbearable distance between the men who decided and the people who paid.</p>
+        <p>On the morning of June 3, 1947, a small group of impeccably dressed men sat around a polished wooden table in the Viceroy's house in New Delhi. Outside, the summer heat of northern India was oppressive; inside, the fans whirred smoothly, keeping the air cool.</p>
+        <p>Lord Mountbatten sat at the head. To his side sat Jawaharlal Nehru, elegant in his tailored achkan, and across from him sat Muhammad Ali Jinnah, frail, his silver hair perfectly combed, holding a cigarette. They were discussing the partition of a civilisation that had survived for five thousand years.</p>
+        <p>To understand the absolute insanity of this moment, one must step away from the political history books and enter the psychological world of Franz Kafka. If Kafka had written this scene, it would be called <em>The Partition</em>. Here were three elite, Westernised lawyers using neat, legalistic jargon to divide four hundred million human lives, while having no physical connection to the soil they were slicing up.</p>
+
+        <h4>The Freudian Lock</h4>
+        <p>Why were they sitting there? A Freudian deduction reads this meeting as the culmination of a collective neurosis. Jinnah's <em>Ego</em> had been deeply wounded in 1937, when Congress treated him as an irrelevant political minority; his unconscious drive was no longer about protecting Islam but about forcing Nehru and the British to acknowledge him as an absolute equal. Nehru's <em>Ego</em>, conversely, was locked in a socialist romance with a powerful central state — he wanted to be the architect of a grand, modern machinery. Neither man was looking at the people of India. They were looking at their own reflections in the mirror of power. Because their egos could not share the steering wheel, they calmly agreed to cut the car in half.</p>
+
+        <div class="mini-flow">
+          <div class="box">The New Delhi Boardroom<span class="lbl">the Freudian Ego-Lock</span></div>
+          <div class="arrow">&darr;</div>
+          <div class="box">Radcliffe's Kafkaesque Line<span class="lbl">the cut, drawn cold</span></div>
+          <div class="arrow">&darr;</div>
+          <div class="box">The Grassroots Samaj<span class="lbl">the shattered paradise</span></div>
+        </div>
+
+        <h4>The Missing Holmesian Clue</h4>
+        <p>A Holmesian analysis of the room reveals the most damning clue of all: the deliberate omission of the time variable. The British had announced they would leave by June 1948 — twelve months to transition the military, draw accurate borders, protect minority assets. Yet Mountbatten suddenly announced the exit would happen in ten weeks, on August 15, 1947. Why? Eliminate the impossible, and only one improbable truth remains: a bankrupt empire was executing a corporate exit strategy, rushing the timeline so the inevitable explosion would land on India and Pakistan's watch, keeping Britain pristine in the eyes of global history.</p>
+
+        <h4>The Pop Hypnosis</h4>
+        <p>While the three men played their legalistic chess match, how did they get the masses to comply? They used the Michael Jackson strategy of stadium-level synchronisation — raw, intoxicating hooks released into the public arena instead of constitutional percentages. The Muslim League blasted <em>"Pakistan ka matlab kya? La ilaha illallah"</em> into the rural fields of Bengal, turning peasants into a synchronised chorus; opposing groups answered with anthems of a mutilated motherland. It was a brilliant, terrifying pop-marketing campaign — a simple, intoxicating melody of fear and pride. The people stopped thinking as individuals. They became a crowd, and a crowd, as Freud warned, has no intellect — only raw, primal instinct.</p>
+
+        <div class="reader-protocol">
+          <div class="rp-head">The Swaraj Protocol — Chapter One</div>
+          <div class="rp-item"><b>1. Dismantle the Pop-Hooks.</b> Modern parties still run the Michael Jackson strategy on you. When a slogan is short, emotional and built to make you fear another community, your brain is being hacked. Apply the Holmesian deduction: what data point are they hiding from you while they make you feel?</div>
+          <div class="rp-item"><b>2. Reject the Kafkaesque Label.</b> The state loves to file you into rigid boxes — majority, minority, caste, vote-bank — artificial lines drawn by bureaucrats to manage you, just like the Radcliffe line. Refuse the state's labels for your neighbours. Reclaim the Tagorean <em>Samaj</em> through direct, organic relationships, bypassing the machinery entirely.</div>
+        </div>
       </div>
     </div>
   </div>
@@ -253,6 +366,8 @@ body{
       <div class="pitem"><span class="pn">PR-01</span><h4>Detoxify the Mind</h4><p>Recognise manufactured outrage and vote-bank panic for what they are. Read the deadlock, not the slogan.</p></div>
       <div class="pitem"><span class="pn">PR-02</span><h4>Go to the Source</h4><p>Before repeating a historical claim, ask which letter, transcript or archive it rests on. If there is none, set it down.</p></div>
       <div class="pitem"><span class="pn">PR-03</span><h4>Build the Local Node</h4><p>Turn your street into an independent node of the <em>Samaj</em> — a library, a mutual aid circle, a place to disagree without fracture.</p></div>
+      <div class="pitem"><span class="pn">PR-04</span><h4>Dismantle the Pop-Hook</h4><p>Treat every short, emotionally charged slogan as a hacked rhythm, not an argument. Ask what data point it is hiding while it makes you feel.</p></div>
+      <div class="pitem"><span class="pn">PR-05</span><h4>Reject the Kafkaesque Label</h4><p>Refuse the bureaucrat's box — majority, minority, vote-bank. Meet the person, not the category the state assigned them.</p></div>
     </div>
   </div>
 </section>
