@@ -376,7 +376,7 @@ body{
   .dual-flow{grid-template-columns:1fr}
   .dual-flow .col:first-child{border-right:0;border-bottom:1px solid var(--line-soft)}
   .stat-block .sb-row{flex-direction:column;gap:2px}
-  .stat-block .sb-row .v{text-align:left}
+  .stat-block .sb-row .v{text-align:left;white-space:normal}
   .vol-list{grid-template-columns:1fr}
   .gen-grid{grid-template-columns:1fr}
   .gen{border-right:0;border-bottom:1px solid var(--line-soft)}
