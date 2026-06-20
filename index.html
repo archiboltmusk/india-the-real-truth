@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Unbroken Samaj — A 100-Volume Monument</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Archivo:wght@400;500;600;700;800&family=Archivo+Narrow:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16130d;
+  --paper:#e8e2d2;
+  --paper-deep:#ddd5c0;
+  --rust:#8a2b16;
+  --gold:#9a7322;
+  --line:rgba(22,19,13,.28);
+  --line-soft:rgba(22,19,13,.14);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Spectral',Georgia,serif;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(22,19,13,.012) 3px,rgba(22,19,13,.012) 4px);
+}
+.wrap{max-width:1100px;margin:0 auto;padding:0 28px}
+.mono{font-family:'Archivo Narrow',sans-serif;letter-spacing:.16em;text-transform:uppercase}
+
+/* ---- masthead ---- */
+.masthead{border-bottom:3px double var(--ink);padding-top:34px}
+.kicker{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-family:'Archivo Narrow',sans-serif;font-size:11px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--ink);padding-bottom:16px;
+  border-bottom:1px solid var(--line);
+}
+.kicker .r{color:var(--rust)}
+.title-block{padding:30px 0 22px;text-align:center}
+.title-block h1{
+  font-family:'Archivo',sans-serif;font-weight:800;
+  font-size:clamp(40px,9vw,108px);line-height:.92;letter-spacing:-.02em;
+  text-transform:uppercase;
+}
+.title-block h1 .thin{font-weight:400}
+.title-block .sub{
+  margin-top:18px;font-family:'Spectral',serif;font-style:italic;
+  font-size:clamp(15px,2.2vw,21px);color:var(--ink);
+}
+.runline{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:6px 22px;
+  padding:16px 0 22px;border-top:1px solid var(--line);margin-top:24px;
+  font-family:'Archivo Narrow',sans-serif;font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(22,19,13,.62)}
+.runline b{color:var(--rust);font-weight:700}
+
+/* ---- thesis hero ---- */
+.thesis{
+  border-bottom:3px double var(--ink);
+  padding:46px 0 50px;
+  display:grid;grid-template-columns:1.7fr 1fr;gap:0;
+}
+.thesis .lead{padding-right:42px;border-right:1px solid var(--line)}
+.thesis .lead .drop{font-size:0;line-height:0}
+.thesis .lead p{font-size:clamp(18px,2.3vw,23px);line-height:1.5;margin-bottom:18px}
+.thesis .lead p:first-of-type::first-letter{
+  font-family:'Archivo',sans-serif;font-weight:800;
+  float:left;font-size:90px;line-height:.74;padding:6px 12px 0 0;color:var(--rust)}
+.thesis .side{padding-left:42px}
+.thesis .side h3{
+  font-family:'Archivo Narrow',sans-serif;text-transform:uppercase;
+  letter-spacing:.18em;font-size:12px;color:var(--rust);
+  padding-bottom:14px;margin-bottom:18px;border-bottom:1px solid var(--line)}
+.law{margin-bottom:22px}
+.law .n{font-family:'Archivo',sans-serif;font-weight:800;font-size:13px;color:var(--gold)}
+.law h4{font-family:'Spectral',serif;font-weight:600;font-size:17px;margin:2px 0 4px}
+.law p{font-size:14.5px;color:rgba(22,19,13,.78);line-height:1.45}
+
+/* ---- arcs ---- */
+.section-head{
+  display:flex;align-items:baseline;gap:18px;
+  padding:44px 0 8px;border-bottom:1px solid var(--ink);margin-bottom:0}
+.section-head .num{font-family:'Archivo',sans-serif;font-weight:800;font-size:13px;color:var(--rust)}
+.section-head h2{font-family:'Archivo',sans-serif;font-weight:700;text-transform:uppercase;
+  font-size:clamp(20px,3vw,30px);letter-spacing:-.01em}
+.section-head .vols{margin-left:auto;font-family:'Archivo Narrow',sans-serif;
+  letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:rgba(22,19,13,.55)}
+
+.arc-grid{display:grid;grid-template-columns:repeat(2,1fr)}
+.arc{border-bottom:1px solid var(--line-soft);padding:24px 0;cursor:default;
+  transition:background .25s ease}
+.arc:nth-child(odd){border-right:1px solid var(--line-soft);padding-right:34px}
+.arc:nth-child(even){padding-left:34px}
+.arc:hover{background:rgba(138,43,22,.05)}
+.arc .id{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.arc .id .ax{font-family:'Archivo',sans-serif;font-weight:800;font-size:34px;
+  line-height:.8;color:var(--ink)}
+.arc .id .rng{font-family:'Archivo Narrow',sans-serif;letter-spacing:.12em;
+  text-transform:uppercase;font-size:11px;color:var(--rust)}
+.arc h3{font-family:'Spectral',serif;font-weight:600;font-size:21px;margin-bottom:6px}
+.arc .focus{font-size:14.5px;color:rgba(22,19,13,.74);line-height:1.45}
+
+/* ---- volume one feature ---- */
+.feature{margin-top:60px;border:3px double var(--ink);padding:0}
+.feature .ftop{background:var(--ink);color:var(--paper);padding:14px 30px;
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:'Archivo Narrow',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:12px}
+.feature .ftop .r{color:#d98f6e}
+.feature .fbody{padding:42px 44px}
+.feature .fbody .vlabel{font-family:'Archivo',sans-serif;font-weight:800;
+  color:var(--rust);letter-spacing:.04em;font-size:13px;text-transform:uppercase}
+.feature .fbody h2{font-family:'Spectral',serif;font-weight:700;font-style:italic;
+  font-size:clamp(30px,5vw,52px);line-height:1;margin:10px 0 22px}
+.feature .fbody .cols{column-count:2;column-gap:40px;column-rule:1px solid var(--line-soft)}
+.feature .fbody .cols p{font-size:16.5px;margin-bottom:15px;break-inside:avoid}
+.feature .fbody .cols p:first-child::first-letter{
+  font-family:'Archivo',sans-serif;font-weight:800;float:left;font-size:62px;
+  line-height:.7;padding:6px 9px 0 0;color:var(--ink)}
+
+/* ---- protocol ---- */
+.protocol{margin-top:60px;background:var(--ink);color:var(--paper);
+  padding:50px 0;position:relative}
+.protocol::before{content:"";position:absolute;inset:7px;border:1px solid rgba(232,226,210,.22);pointer-events:none}
+.protocol .ph{display:flex;align-items:baseline;gap:16px;
+  border-bottom:1px solid rgba(232,226,210,.25);padding-bottom:16px;margin-bottom:26px}
+.protocol .ph .m{font-family:'Archivo Narrow',sans-serif;letter-spacing:.2em;
+  text-transform:uppercase;font-size:12px;color:#d98f6e}
+.protocol .ph h2{font-family:'Archivo',sans-serif;font-weight:700;text-transform:uppercase;
+  font-size:clamp(22px,3.4vw,34px)}
+.protocol .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.protocol .pitem .pn{font-family:'Archivo',sans-serif;font-weight:800;font-size:13px;color:#caa24a}
+.protocol .pitem h4{font-family:'Spectral',serif;font-weight:600;font-size:19px;margin:4px 0 6px}
+.protocol .pitem p{font-size:15px;color:rgba(232,226,210,.82);line-height:1.5}
+
+/* ---- colophon ---- */
+.colophon{padding:44px 0 70px;text-align:center;border-top:3px double var(--ink);margin-top:60px}
+.colophon p{font-family:'Archivo Narrow',sans-serif;letter-spacing:.14em;
+  text-transform:uppercase;font-size:11px;color:rgba(22,19,13,.6);margin-bottom:8px}
+.colophon .big{font-family:'Spectral',serif;font-style:italic;font-size:24px;
+  text-transform:none;letter-spacing:0;color:var(--ink);margin:14px 0 22px}
+.disclaim{max-width:680px;margin:0 auto;font-family:'Spectral',serif;font-size:13.5px;
+  font-style:italic;color:rgba(22,19,13,.62);line-height:1.5;border-top:1px solid var(--line-soft);padding-top:18px}
+
+@media(max-width:780px){
+  .thesis{grid-template-columns:1fr}
+  .thesis .lead{padding-right:0;border-right:0;border-bottom:1px solid var(--line);padding-bottom:26px}
+  .thesis .side{padding-left:0;padding-top:28px}
+  .arc-grid{grid-template-columns:1fr}
+  .arc:nth-child(odd){border-right:0;padding-right:0}
+  .arc:nth-child(even){padding-left:0}
+  .feature .fbody .cols{column-count:1}
+  .feature .fbody{padding:30px 24px}
+  .protocol .pgrid{grid-template-columns:1fr;gap:24px}
+  .section-head{flex-wrap:wrap;gap:8px}
+  .section-head .vols{margin-left:0;width:100%}
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="kicker">
+      <span>The Primary Source Edition</span>
+      <span class="r">No. I — The Constitutional Trap</span>
+      <span>Unedited &amp; Unflinching</span>
+    </div>
+    <div class="title-block">
+      <h1>The Unbroken<br><span class="thin">Samaj</span></h1>
+      <div class="sub">A hundred-volume monument to civilisational memory — built from letters, diaries, transcripts and archives, not from state-edited textbooks.</div>
+    </div>
+    <div class="runline">
+      <span><b>100</b> Volumes</span>
+      <span><b>10</b> Master Arcs</span>
+      <span>Primary Sources Only</span>
+      <span>No Heroes · No Villains</span>
+      <span>Every Volume Ends in <b>Action</b></span>
+    </div>
+  </div>
+</header>
+
+<section class="thesis">
+  <div class="wrap" style="display:contents">
+  <div class="lead">
+    <p>This is not an encyclopedia. It is an architectural blueprint for a civilisational resurrection — approached with the precision of a surgeon and the soul of a philosopher.</p>
+    <p>The collection refuses the comfortable story taught in classrooms: that Partition was a clean, inevitable religious war between a unified Hindu crowd and a unified Muslim crowd, led by a cartoon villain and a flawless saint. It opens, instead, the doors to the air-conditioned boardrooms where an elite traded human lives for a monopoly on the state.</p>
+  </div>
+  <aside class="side">
+    <h3>The Metric for Pure Truth</h3>
+    <div class="law">
+      <span class="n">LAW 01</span>
+      <h4>The Primary Source Rule</h4>
+      <p>No reliance on post-1947 state-edited textbooks. Every claim rests on unedited letters, private diaries, court transcripts and legislative archives.</p>
+    </div>
+    <div class="law">
+      <span class="n">LAW 02</span>
+      <h4>The No-Hero Constraint</h4>
+      <p>No figure is a flawless saint or a cartoon villain. Their statesmanship and their catastrophic errors are laid bare, side by side.</p>
+    </div>
+    <div class="law">
+      <span class="n">LAW 03</span>
+      <h4>The Actionable Pivot</h4>
+      <p>Every volume closes with <em>The Protocol</em> — translating its historical truth into an immediate plan for the reader's own mind and community.</p>
+    </div>
+  </aside>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="section-head">
+    <span class="num">§</span>
+    <h2>The Master Architecture</h2>
+    <span class="vols">Ten arcs · One hundred volumes</span>
+  </div>
+  <div class="arc-grid">
+    <article class="arc"><div class="id"><span class="ax">I</span><span class="rng">Vols 1–10</span></div><h3>The Boardroom Deadlock</h3><p class="focus">The legalistic power struggle in New Delhi, 1920–1947, where partition was negotiated as a bargaining chip.</p></article>
+    <article class="arc"><div class="id"><span class="ax">II</span><span class="rng">Vols 11–20</span></div><h3>The Sanitized Mirror</h3><p class="focus">How post-1947 states edited history to legitimise their own monopoly on power, on both sides of the line.</p></article>
+    <article class="arc"><div class="id"><span class="ax">III</span><span class="rng">Vols 21–30</span></div><h3>The Spiritual Battery</h3><p class="focus">The psychological re-awakening — Vivekananda, Aurobindo, and the monastic networks that fuelled fearlessness.</p></article>
+    <article class="arc"><div class="id"><span class="ax">IV</span><span class="rng">Vols 31–40</span></div><h3>The Armed Vanguard</h3><p class="focus">Reclaiming the marginalised history of the revolutionaries — from Chittagong to the 1946 naval mutinies.</p></article>
+    <article class="arc"><div class="id"><span class="ax">V</span><span class="rng">Vols 41–50</span></div><h3>The Civilisational Conscience</h3><p class="focus">Tagore's critique of the nation-state and the primacy of <em>Samaj</em>, plus the Sriniketan village experiments.</p></article>
+    <article class="arc"><div class="id"><span class="ax">VI</span><span class="rng">Vols 51–60</span></div><h3>The Great Synthesizers</h3><p class="focus">The deep pre-colonial history of everyday syncretism — Sufi-Bhakti confluence and the microhistory of the village.</p></article>
+    <article class="arc"><div class="id"><span class="ax">VII</span><span class="rng">Vols 61–70</span></div><h3>The Painted Identity</h3><p class="focus">Nandalal Bose and the visual decolonisation of Indian aesthetics, down to the Constitution's own paintings.</p></article>
+    <article class="arc"><div class="id"><span class="ax">VIII</span><span class="rng">Vols 71–80</span></div><h3>The Economic Decolonisation</h3><p class="focus">The data of the colonial drain, and a modern blueprint for decentralised, self-sustaining local wealth.</p></article>
+    <article class="arc"><div class="id"><span class="ax">IX</span><span class="rng">Vols 81–90</span></div><h3>The Indigenous Mind</h3><p class="focus">Deconstructing Macaulay's education machine and a new Gurukul pedagogy for independent thinking.</p></article>
+    <article class="arc"><div class="id"><span class="ax">X</span><span class="rng">Vols 91–100</span></div><h3>The Swaraj Code</h3><p class="focus">The citizen's manual: what you must do right now — sovereign mind, iron body, local node, living aesthetic.</p></article>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="feature">
+    <div class="ftop"><span>Volume One · Opening the First Door</span><span class="r">The Constitutional Trap</span></div>
+    <div class="fbody">
+      <span class="vlabel">Arc I — The Boardroom Deadlock</span>
+      <h2>The Ambassador's Mutation</h2>
+      <div class="cols">
+        <p>This volume targets the single biggest lie taught in schools — that an entire subcontinent split itself along a clean religious seam. The reality begins with one man's transformation: Jinnah's shift from a secular constitutionalist into an identity-politics strategist.</p>
+        <p>It tracks the 1937 elections and the Congress's fateful refusal to share provincial power. It exhumes the 1946 Cabinet Mission Blueprint — the forgotten plan for a loose, united federation — and the deadlock that buried it.</p>
+        <p>It examines the mechanics of the bluff: how "Pakistan" was first designed as an abstract bargaining chip for a central veto, long before it became a border. And it reconstructs, minute by minute from the archive, how elite stalemates in cool rooms detonated into the Great Calcutta Killings on the streets.</p>
+        <p>No saint. No villain. Only the documents, the dates, and the unbearable distance between the men who decided and the people who paid.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="protocol">
+  <div class="wrap">
+    <div class="ph"><span class="m">Every Volume Ends Here</span><h2>The Protocol</h2></div>
+    <div class="pgrid">
+      <div class="pitem"><span class="pn">PR-01</span><h4>Detoxify the Mind</h4><p>Recognise manufactured outrage and vote-bank panic for what they are. Read the deadlock, not the slogan.</p></div>
+      <div class="pitem"><span class="pn">PR-02</span><h4>Go to the Source</h4><p>Before repeating a historical claim, ask which letter, transcript or archive it rests on. If there is none, set it down.</p></div>
+      <div class="pitem"><span class="pn">PR-03</span><h4>Build the Local Node</h4><p>Turn your street into an independent node of the <em>Samaj</em> — a library, a mutual aid circle, a place to disagree without fracture.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="colophon">
+  <div class="wrap">
+    <p>The Unbroken Samaj · A Magnum Opus in Ten Arcs</p>
+    <div class="big">"We start at the very beginning of the illusion."</div>
+    <p>Built on absolute, unyielding sources</p>
+    <div class="disclaim">
+      Editorial note: this work advances a specific, contested interpretation of subcontinental history — including claims about the Cabinet Mission Plan, the causes of Partition, and the colonial economic drain — that are debated by historians. It is presented here as the author's thesis, not as settled scholarly consensus. Readers are encouraged to consult the named primary sources directly and weigh competing interpretations.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
