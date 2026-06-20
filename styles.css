@@ -363,7 +363,7 @@ body{
   .lens:nth-child(odd){border-right:0;padding-right:0}
   .lens:nth-child(even){padding-left:0}
   .lens-flow{flex-direction:column}
-  .lens-flow .arrow{width:auto;padding:6px 0;transform:rotate(90deg)}
+  .lens-flow .arrow{align-self:center;width:28px;height:20px;padding:0;transform:rotate(90deg)}
   .mission-grid{grid-template-columns:1fr}
   .mission-card:nth-child(odd){border-right:0;padding-right:0}
   .mission-card:nth-child(even){padding-left:0}
