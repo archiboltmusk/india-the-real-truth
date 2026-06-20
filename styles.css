@@ -306,6 +306,12 @@ body{
 .vol-item .vn{font-family:'Archivo',sans-serif;font-weight:800;color:var(--ink);margin-right:5px}
 .vol-item .vt{font-style:italic;color:var(--rust)}
 .vol-item .vd{color:rgba(22,19,13,.68)}
+.chapter-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 18px;
+  background:var(--paper-deep);border-left:2px solid var(--gold);
+  padding:8px 14px;margin:2px 0 10px}
+.chapter-grid .cg-item{font-size:11.5px;line-height:1.5;color:rgba(22,19,13,.72);
+  padding:2px 0}
+.chapter-grid .cg-item b{font-family:'Archivo',sans-serif;font-weight:700;color:var(--rust);margin-right:4px}
 
 /* ---- structural matrix table ---- */
 .struct-points{list-style:none;margin:0 0 8px;display:grid;gap:8px}
@@ -378,6 +384,7 @@ body{
   .stat-block .sb-row{flex-direction:column;gap:2px}
   .stat-block .sb-row .v{text-align:left;white-space:normal}
   .vol-list{grid-template-columns:1fr}
+  .chapter-grid{grid-template-columns:1fr}
   .gen-grid{grid-template-columns:1fr}
   .gen{border-right:0;border-bottom:1px solid var(--line-soft)}
   .gen:last-child{border-bottom:0}
