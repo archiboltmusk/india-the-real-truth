@@ -22,13 +22,37 @@ body{
 .mono{font-family:'Archivo Narrow',sans-serif;letter-spacing:.16em;text-transform:uppercase}
 
 /* ---- site navigation ---- */
-.sitenav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 28px;
-  padding:14px 0;border-bottom:1px solid var(--line);background:var(--paper-deep)}
-.sitenav a{font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:.14em;
+.sitenav{border-bottom:1px solid var(--line);background:var(--paper-deep);
+  position:sticky;top:0;z-index:50}
+.nav-toggle{display:none}
+.nav-bar{display:flex;align-items:center;justify-content:flex-end;gap:14px;padding:10px 28px}
+.nav-brand{font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:13px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin-right:auto}
+.nav-cta{font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:11.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:var(--gold);
+  padding:8px 14px;text-decoration:none;border:1px solid var(--ink);white-space:nowrap}
+.nav-cta:hover{background:var(--rust);color:var(--paper)}
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+.nav-burger span{width:24px;height:2px;background:var(--ink);display:block;transition:background .2s}
+.nav-toggle:checked ~ .nav-bar .nav-burger span{background:var(--rust)}
+.navlinks{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 28px;padding:14px 0}
+.navlinks a{font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:.14em;
   text-transform:uppercase;color:var(--ink);text-decoration:none;padding-bottom:3px;
   border-bottom:2px solid transparent}
-.sitenav a:hover{color:var(--rust)}
-.sitenav a.active{color:var(--rust);border-color:var(--rust)}
+.navlinks a:hover{color:var(--rust)}
+.navlinks a.active{color:var(--rust);border-color:var(--rust)}
+
+/* ---- doodle divider ---- */
+.doodle{width:100%;line-height:0}
+.doodle svg{width:100%;height:14px;display:block}
+.doodle svg path{fill:none;stroke:var(--rust);stroke-width:1.6;stroke-linecap:round;opacity:.45}
+
+/* ---- highlighter mark + small star doodle ---- */
+.mark{background:linear-gradient(100deg,transparent 0%,transparent 3%,
+  var(--gold) 3%,var(--gold) 97%,transparent 97%);
+  padding:0 6px;border-radius:1px 6px 2px 5px}
+.feature .fbody .vlabel::before,.vlabel::before{content:"\2726";color:var(--gold);
+  margin-right:7px;font-size:11px}
 
 /* ---- compact sub-page header ---- */
 .subhead{border-bottom:3px double var(--ink);padding-top:30px}
@@ -306,6 +330,13 @@ body{
 .pagefoot .disabled{color:rgba(22,19,13,.3);pointer-events:none}
 
 @media(max-width:780px){
+  .nav-cta{display:none}
+  .nav-burger{display:flex}
+  .navlinks{flex-direction:column;align-items:center;gap:2px;padding:0;
+    max-height:0;overflow:hidden;border-top:1px solid var(--line);
+    transition:max-height .3s ease,padding .3s ease}
+  .navlinks a{padding:8px 0}
+  .nav-toggle:checked ~ .navlinks{max-height:480px;padding:8px 0}
   .thesis{grid-template-columns:1fr}
   .thesis .lead{padding-right:0;border-right:0;border-bottom:1px solid var(--line);padding-bottom:26px}
   .thesis .side{padding-left:0;padding-top:28px}
